@@ -1,0 +1,282 @@
+
+#include <bits/stdc++.h>
+
+
+#include <cmath>
+#include <string>
+
+
+using namespace std;
+void trigo(){
+    int angle ;
+
+    string tr ;
+    cout<<"insert a function to ";
+    cin>>tr;
+    cin>> angle ;
+    angle = angle * (M_PI/180);
+switch ('tr')
+{
+case 'cos':
+cout<<cos(angle);
+ break;
+case ('tan') :
+cout << tan(angle) ;
+return ;
+case ('sin'):
+cout <<sin (angle) ;
+return ;
+case ('cot'):
+cout<<1/tan(angle);
+return ;
+case('sec'):
+cout << 1/cos(angle);
+return;
+case('cosec'):
+cout<< 1/sin(angle);
+return;
+    default:
+    break;
+}
+    
+}
+
+void calculateLog() {
+    float b;
+    cout << "Enter a number: \n";
+    cin >> b;
+    
+    for (float i = 0; i < b; i += 0.001) { 
+        if (abs(pow(10, i) - b) < 0.001) { 
+            cout << "Log is: " << fixed << setprecision(3) << i << endl;
+            return; // Exit the loop once the log is found
+        }
+    }
+    cout << "Logarithm not found with the given precision." << endl;
+}
+
+
+void root() {
+    float b;
+    cout << "Enter a number: ";
+    cin >> b;
+    cout << "Square root of " << b << " is " << sqrt(b) << endl;
+}
+
+// Main function to handle operations
+void nonkeybard() {
+    int b;
+    string o;
+    cout << "Enter the process: \n";
+    cin >> o;
+    
+    if (o == "square root" || o == "root" || o == "sqrt") { 
+        root(); // Call root() without void keyword
+    } else if (o == "log") {
+        calculateLog(); 
+    } else if (o=="multiplication"){
+        string p ;
+        cout <<"enter an operation " << endl<<"type trigo for trignometric calculation: ";
+        cin >> p;
+        if (p=="e"){
+            cout<<"give a number /n";
+cin>>b;
+cout<< 2.17*b ;
+}else if (o== "trigo" || o== " trigo "|| o=="trigo "){
+    trigo();
+}else if (o=="pi"){
+    cout<<"give a number: ";
+    cin>>b;
+    cout << 3.14*b ;
+}
+    }
+}
+
+int fact(int a)
+{
+    if (a <= 1)
+    {
+        return 1;
+    }
+    else
+    {
+        return a * fact(a - 1);
+    }
+}
+int main()
+{
+    string options;
+
+    cout << "***Harsh ki calculator***";
+    cout << '\n'
+         << "Type new to get new slide \n"
+         << "Type exit to exit\n"
+         << "Type GO if your operation required any non keyboard function \n";
+    cin >> options;
+    if (options == "new")
+    {
+
+        int t;
+        float a;
+        cout << "enter a: ";
+
+        cin >> a;
+        cout << "enter the operrator ";
+        char p;
+        cin >> p;
+
+        float b;
+        if (p != '!')
+        {
+            cout << "enter b: ";
+            cin >> b;
+        }
+        else
+        {
+            cout << "the value of " << a << " is " << (fact(a));
+        }
+        float div = a / b;
+        int rem = (int)a % (int)b;
+
+        switch (p)
+        {
+        case '+':
+            cout << "the sum is: " << a + b;
+
+            break;
+        case '-':
+            cout << "the diff is: ";
+            if (a > b)
+            {
+                cout << a - b;
+            }
+            else
+            {
+                cout << b - a;
+            }
+            break;
+        case '*':
+            cout << "the product is: " << a * b;
+            break;
+        case '/':
+
+            cout << "The  quentint is: " << div << '\n'
+                 << "And the remider is: " << rem;
+            break;
+        case '%':
+            cout << "The " << a << " percent of " << b << " is " << (a / 100) * b;
+            break;
+        case '^':
+            cout << a << " to the power " << b << " is: " << pow(b, a);
+        default:
+
+            break;
+        }
+        cout << '\n'
+             << "OKAY";
+    }
+    else if (options == "exit")
+    {
+        cout << "OKAY\n";
+    }
+    else if (options == "GO")
+    {
+        nonkeybard();
+    }
+    else
+    {
+        cout << "Thats not appropriate \n";
+        return 0;
+    }
+    do
+    {
+
+        cout << '\n'
+             << "Type new to get new slide \n"
+             << "Type exit to exit\n"
+             << "Type GO if your operation required any non keyboard function";
+        cin >> options;
+        while (options == "new")
+        {
+
+            int t;
+            float a;
+            cout << "enter a: ";
+
+            cin >> a;
+            cout << "enter the operrator \n";
+            char p;
+            cin >> p;
+
+            float b;
+            if (p != '!')
+            {
+                cout << "enter b: ";
+                cin >> b;
+            }
+            else
+            {
+                cout << "the value of " << a << " is " << (fact(a));
+            }
+            float div = a / b;
+            int rem = (int)a % (int)b;
+
+            switch (p)
+            {
+            case '+':
+                cout << "the sum is: " << a + b;
+
+                break;
+            case '-':
+                cout << "the diff is: ";
+                if (a > b)
+                {
+                    cout << a - b;
+                }
+                else
+                {
+                    cout << b - a;
+                }
+                break;
+            case '*':
+                cout << "the product is: " << a * b;
+                break;
+            case '/':
+
+                cout << "The  quentint is: " << div << '\n'
+                     << "And   the reinder is: " << rem;
+                break;
+            case '%':
+                cout << "The " << a << " percent of " << b << " is " << (a / 100) * b;
+                break;
+
+            case '^':
+                cout << a << " to the power " << b << " is: " << pow(b, a);
+            default:
+
+                break;
+            }
+           
+           
+        }
+        while (options=="exit")
+        {
+            cout <<"Okay" ;
+            break ;
+        }
+         while(options == "exit")
+        {
+            cout << "OKAY\n";
+        }
+       while(options == "GO")
+        {
+            nonkeybard();
+        }
+      
+        cout << '\n';
+    } 
+    while (options != "end");
+    cout << "\n Thanks  for performing useless calculations ";
+
+    return 0;
+}
